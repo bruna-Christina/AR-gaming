@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+  <head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/AR_logo.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Tutorial</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">			
+    <link rel="stylesheet" href="css/nice-select.css">							
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">			
+    <link rel="stylesheet" href="css/jquery-ui.css">			
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>	
+    <header id="header">
+      <div class="container main-menu">
+        <div class="row align-items-center justify-content-between d-flex">
+          <div id="logo">
+            <a href="index.html">
+              <h3 style="
+                background: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              ">AR Gaming</h3>
+            </a>
+          </div>
+          <nav id="nav-menu-container">
+            <ul class="nav-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="tutorial.html">Tutorial</a></li>
+            </ul>
+          </nav><!-- #nav-menu-container -->		    		
+        </div>
+      </div>
+    </header><!-- #header -->
+
+    <!-- start banner Area -->
+    <section class="relative about-banner" id="home">	
+      <div class="overlay overlay-bg"></div>
+      <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="about-content col-lg-12">
+            <h1 class="text-white">
+              AR Game Tutorial
+            </h1>	
+            <p class="text-white link-nav">
+              <a href="index.html">Home</a><span class="lnr lnr-arrow-right"></span><a href="tutorial.html">Tutorial</a>
+            </p>
+          </div>	
+        </div>
+      </div>
+    </section>
+    <!-- End banner Area -->	
+
+    <!-- Start Sample Area -->
+    <section class="sample-text-area">
+      <div class="container">
+        <h3 class="text-heading">Game</h3>
+        <p class="sample-text" style="text-align: justify;">
+          Let's create a simple game using Vuforia.
+          Vuforia uses the device's camera feed combined with accelerometer and gyroscope data to examine the world.
+          So, this tutorial creates a simple game where spheres appears randomly in different directions and speed.
+          This allows the user to follow the spheres around with the device. It also add a tap interaction. As soon as the user tap on the sphere, it disappears.
+        </p>
+        <br>
+        <h3 class="text-heading">Initial Setup</h3>
+        <p class="sample-text" style="text-align: justify;">
+            Vuforia is one of the most solid augmented reality tools.
+            It is an AR library that is compatible with Android, iOS, UWP, and some brands of smart glasses.
+        </p>
+        <br>
+        <h4 class="typo-list">Vuforia Configuration</h4>
+        <p class="sample-text" style="text-align: justify;">
+            Before we start playing around, we’ll need to prepare Unity for Vuforia. 
+            It is quite simple process because since the 2017.2 version, Unity integrates the Vuforia Engine.
+            You just have to make sure to select Vuforia Augmented Reality Support in the Components section when installing Unity.
+            Also, don't forget to install your platform support (iOS, Android, UWP). This tutorial was done by using Android.
+            <br><br>
+            First, we need to activate Vuforia Engine in the project.
+            <ul class="unordered-list">
+              <li>Go to Player Settings to activate Vuforia Engine under the "XR Settings" section and check "Vuforia Augmented Reality"</li>
+            </ul>
+            <img src="img/vuforiaActivation.png" alt="" class="img-fluid">
+            <ul class="unordered-list">
+              <li>Delete "Main Camera"</li>
+              <li>Add "AR Camera" by going to GameObject > Vuforia > AR Camera.</li>
+              <li>Create/Log in a <a href="https://developer.vuforia.com/" target="_blank">developer account</a> on Vuforia.</li>
+              <li>Go to <a href="https://developer.vuforia.com/vui/develop/licenses" target="_blank">License Manager</a> on Vuforia’s developer portal and get a new development key</li>
+              <li>Put the name of your project as the License name and create the license.</li>
+              <li>After creating it, select the license from the list (if you have more) and copy the license key</li>
+              <li>Back to Unity, select ARCamera element. In the Inspector panel, click on the button "Open Vuforia Engine configuration" below the Vuforia Behavior (Script) component</li>
+              <li>Find the field "App License Key", and paste the license you created in Vuforia's developer portal.</li>
+              <li>Test the configuration by building your project on your device. For now, all that you should expect to see is the camera feed on your device without any error
+                <ul>
+                  <li><b>Android:</b>Vuforia Engine does not support Android TV. Disable the Android TV Compatibility in the Player Settings > Other Settings > Configuration</li>
+                </ul>
+              </li>
+            </ul>
+            <br>
+            Now you can add any features of Vuforia Engine to your project.
+        </p>
+        <h4 class="typo-list">Game</h4>
+        <p class="sample-text" style="text-align: justify;">
+          For this specific game, there is still missing one Vuforia Configuration. Vuforia needs to track the position of the device relative to the world.
+          <ul class="unordered-list">
+            <li>Open Vuforia Engine configuration and activate Track Device Pose</li>
+          </ul>
+          <br>
+          <h6 class="typo-list">Let's spawn ours spheres.</h6>
+          <ul class="unordered-list">
+            <li>Create a Empty Object and add a new C# script. You can delete the Update function. We will not used it.</li>
+            <li>Let's create a function to set the initial position of this empty object.
+              <ul class="unordered-list">
+                <li>We will get the camera position and set this empty object to be spawned 10 units forward from the camera.</li>
+                <li>We'll set the position only one time within the Start function.</li>
+                <li>Let's create a coroutine to wait a little time to set the position.</li>
+              </ul>
+            </li>
+          </ul>
+          <pre class="prettyprint">
+// if position was set
+private bool isPositionSet;
+// Start is called before the first frame update
+void Start()
+{
+    StartCoroutine(ChangePosition());
+}
+
+private bool SetPosition()
+{
+    // get the camera position
+    Transform cam = Camera.main.transform;
+
+    // set the position 10 units forward from the camera position
+    transform.position = cam.forward * 10;
+    Debug.Log("Setting position to:" + transform.position);
+    return true;
+}
+
+private IEnumerator ChangePosition()
+{
+
+    yield return new WaitForSeconds(0.2f);
+    // Define the Spawn position only once
+    if (!isPositionSet)
+    {
+        // change the position only if Vuforia is active
+        if (VuforiaBehaviour.Instance.enabled)
+            isPositionSet = SetPosition();
+    }
+}
+          </pre>
+          <ul class="unordered-list">
+            <li>We already have set the initial position of our empty object based on the device camera postion.</li>
+            <li>Now we'll create an area around our empty object to establish where our spheres will spawn.</li>
+            <li>Next step, we'll change the script to instantiate the spheres with different speed and directions.</li>
+            <li>Create a coroutine to spawn the elements.</li>
+          </ul>
+          <pre class="prettyprint">
+// reference to the gameObject that will be instantiate
+public GameObject enemy;
+
+// Time to spawn the enemies
+public float timeToSpawn = 0.5f;
+
+private IEnumerator SpawnLoop()
+{
+    // Defining the Spawning Position
+    StartCoroutine(ChangePosition());
+
+    yield return new WaitForSeconds(0.2f);
+
+    InvokeRepeating("Spawn", timeToSpawn, timeToSpawn * 2);
+}
+
+void Spawn()
+{
+    // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
+    transform.position = transform.position + Camera.main.transform.forward * Time.deltaTime;
+    Instantiate(enemy, (Random.insideUnitSphere * 4) + transform.position, transform.rotation);
+}
+          </pre>
+          <ul class="unordered-list">
+            <li>Edit the Start function to call the spawn coroutine instead of the ChangePosition coroutine.</li>
+          </ul>
+          <pre class="prettyprint">
+// Start is called before the first frame update
+void Start()
+{
+    StartCoroutine(SpawnLoop());
+}
+          </pre>
+          <ul class="unordered-list">
+            <li>Create a sphere prefab to be instantiated by the script</li>
+            <li>Drag the prefab to the enemy field of our script</li>
+          </ul>
+          <img src="img/spawnEnemies.png" alt="" class="img-fluid">
+          <br><br>
+          <h6 class="typo-list">Let's add movement to ours spheres.</h6>
+          <ul class="unordered-list">
+            <li>Add a new C# script to the sphere prefab</li>
+            <li>Each sphere will have random characteristics. Rotation speed and rotation direction will be defined randomly.</li>
+          </ul>
+          <pre class="prettyprint">
+// Orbit max Speed
+public float orbitMaxSpeed = 30f;
+
+// Orbit speed
+private float orbitSpeed;
+
+// Anchor point for the element to rotate around
+private Transform orbitAnchor;
+
+// Orbit direction
+private Vector3 orbitDirection;
+
+// Growing Speed
+public float growingSpeed = 10f;
+
+void Start()
+{
+    ElementSettings();
+}
+
+// Set initial element settings
+private void ElementSettings()
+{
+    // defining the anchor point as the main camera
+    orbitAnchor = Camera.main.transform;
+
+    // defining the orbit direction
+    float x = Random.Range(-1f, 1f);
+    float y = Random.Range(-1f, 1f);
+    float z = Random.Range(-1f, 1f);
+    orbitDirection = new Vector3(x, y, z);
+
+    // defining speed
+    orbitSpeed = Random.Range(5f, orbitMaxSpeed);
+}
+          </pre>
+          <ul class="unordered-list">
+            <li>Add moviment to the sphere</li>
+          </ul>
+          <pre class="prettyprint">
+    // Update is called once per frame
+    void Update()
+    {
+        // makes the element orbit and rotate
+        RotateElement();
+    }
+
+    // Makes the element rotate around a anchor point
+    // and rotate around its own axis
+    private void RotateElement()
+    {
+        // rotate element around camera
+        transform.RotateAround(
+            orbitAnchor.position, orbitDirection, orbitSpeed * Time.deltaTime);
+
+        // rotating around its axis
+        transform.Rotate(orbitDirection * 30 * Time.deltaTime);
+    }
+          </pre>
+          <br><br>
+          <h6 class="typo-list">Let's add interaction to ours spheres.</h6>
+          <ul class="unordered-list">
+            <li>Destroy the sphere on user tap (click)</li>
+          </ul>
+          <pre class="prettyprint">
+// Destroy element on tap
+void OnMouseDown()
+{
+    Destroy(gameObject);
+}
+          </pre>
+        </p>
+        <br>
+        <h3 class="text-heading">Conclusion</h3>
+        This is just the basics for a AR game. You could add particle explosion, create a score system, adding a timer to improve the game.
+        Vuforia provides sophisticated resources that can create engaging experiences. They are Model Targets, Image Targets, Object Targets, Multi-Targets, Cylinder Targets, VuMarks, External Camera and Ground Plane.
+      </div>
+    </section>
+    <!-- End Sample Area -->
+
+    <!-- Start Align Area -->
+    <div class="whole-wrap">
+      <div class="container">
+        <div class="section-top-border">
+          <h3 class="mb-30">Full Scripts</h3>
+          <div class="row">
+            <div class="col-lg-12">
+              <blockquote class="generic-blockquote">
+                <dl class="accordion">
+                  <dt>
+                    <a href="">Element Behavior Script</a>
+                  </dt>
+                  <dd>
+                    <pre class="prettyprint">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ElementBehavior : MonoBehaviour
+{
+    // Orbit max Speed
+    public float orbitMaxSpeed = 30f;
+
+    // Orbit speed
+    private float orbitSpeed;
+
+    // Anchor point for the element to rotate around
+    private Transform orbitAnchor;
+
+    // Orbit direction
+    private Vector3 orbitDirection;
+
+    // Growing Speed
+    public float growingSpeed = 10f;
+
+    void Start()
+    {
+        ElementSettings();
+    }
+
+    // Set initial element settings
+    private void ElementSettings()
+    {
+        // defining the anchor point as the main camera
+        orbitAnchor = Camera.main.transform;
+
+        // defining the orbit direction
+        float x = Random.Range(-1f, 1f);
+        float y = Random.Range(-1f, 1f);
+        float z = Random.Range(-1f, 1f);
+        orbitDirection = new Vector3(x, y, z);
+
+        // defining speed
+        orbitSpeed = Random.Range(5f, orbitMaxSpeed);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // makes the element orbit and rotate
+        RotateElement();
+    }
+
+    // Makes the element rotate around a anchor point
+    // and rotate around its own axis
+    private void RotateElement()
+    {
+        // rotate element around camera
+        transform.RotateAround(
+            orbitAnchor.position, orbitDirection, orbitSpeed * Time.deltaTime);
+
+        // rotating around its axis
+        transform.Rotate(orbitDirection * 30 * Time.deltaTime);
+    }
+    // Destroy element on tap
+    void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+}                    
+                    </pre>
+                  </dd>
+                  <dt>
+                    <a href="">Spawn Elements Script</a>
+                  </dt>
+                  <dd>
+                    <pre class="prettyprint">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Vuforia;
+
+public class SpawnElements : MonoBehaviour
+{
+    // reference to the gameObject that will be instantiate
+    public GameObject enemy;
+
+    // Time to spawn the enemies
+    public float timeToSpawn = 0.5f;
+
+    // if position was set
+    private bool isPositionSet;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartCoroutine(SpawnLoop());
+    }
+
+    private bool SetPosition()
+    {
+        // get the camera position
+        Transform cam = Camera.main.transform;
+
+        // set the position 10 units forward from the camera position
+        transform.position = cam.forward * 10;
+        Debug.Log("Setting position to:" + transform.position);
+        return true;
+    }
+
+    private IEnumerator ChangePosition()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        // Define the Spawn position only once
+        if (!isPositionSet)
+        {
+            // change the position only if Vuforia is active
+            if (VuforiaBehaviour.Instance.enabled)
+                isPositionSet = SetPosition();
+        }
+    }
+
+    private IEnumerator SpawnLoop()
+    {
+        // Defining the Spawning Position
+        StartCoroutine(ChangePosition());
+
+        yield return new WaitForSeconds(0.2f);
+
+        InvokeRepeating("Spawn", timeToSpawn, timeToSpawn * 2);
+    }
+
+    void Spawn()
+    {
+        // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
+        transform.position = transform.position + Camera.main.transform.forward * Time.deltaTime;
+        Instantiate(enemy, (Random.insideUnitSphere * 4) + transform.position, transform.rotation);
+    }
+}                        
+                    </pre>
+                  </dd>
+                </dl>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="section-top-border">
+          <h3 class="mb-30">References</h3>
+          <div class="row">
+            <ol class="ordered-list" style="text-align: justify;">
+              <li><span><a href="https://library.vuforia.com/articles/Training/getting-started-with-vuforia-in-unity.html">Getting Started with Vuforia Engine in Unity</a></span></li>
+              <li><span><a href="https://code.tutsplus.com/tutorials/creating-ar-games-on-unity-using-vuforia-part-1--cms-27210">Creating AR Games using Vuforia</a></span></li>
+              <li><span><a href="https://unity3d.com/learn/tutorials/projects/survival-shooter/more-enemies">Unity Survival Shooter tutorial</a></span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Align Area -->
+
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap">
+      <div class="container">
+        <p class="footer-text" style="text-align: right;">
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <br> This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+      </div>
+    </footer>
+    <!-- End footer Area -->		
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+    <style>
+      code .kwd, pre .kwd{
+        color: rgb(86, 156, 214);
+      }
+      code .typ, pre .typ{
+        color: rgb(78, 201, 176);
+      }
+      code .lit, pre .lit{
+        color:rgb(181, 206, 168);
+      }
+    </style>
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>			
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
+    <script src="js/easing.min.js"></script>			
+    <script src="js/hoverIntent.js"></script>
+    <script src="js/superfish.min.js"></script>	
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>	
+    <script src="js/jquery.tabs.min.js"></script>						
+    <script src="js/jquery.nice-select.min.js"></script>	
+    <script src="js/isotope.pkgd.min.js"></script>			
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/simple-skillbar.js"></script>							
+    <script src="js/owl.carousel.min.js"></script>							
+    <script src="js/mail-script.js"></script>	
+    <script src="js/main.js"></script>	
+  </body>
+</html>
