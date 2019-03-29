@@ -230,7 +230,54 @@
           <br><br>          
           There are a few research papers that set guidelines for designing AR games. Wetzel et al present a set of design guidelines which are drawn from experiences of three mixed reality games. Xu et al analyze and generate design lessons from dozens of HAR (Handheld AR) games. Xu ate al summarize their results as “pre-patterns” derived from existing practices into repeatable principles and solutions. 
           <br><br>
-          Wetzel et al present a set of high level design guidelines which are drawn from three mixed reality games. The guidelines provide specific guidance on relationships between real and virtual space, social interaction, use of AR technologies. Table 1 summarises the different range of characteristics, technologies and interaction techniques from the three games (Interference, Timewrap and The eye of Judgment) [5].
+          Wetzel et al present a set of high level design guidelines. The guidelines provide specific guidance on relationships between real and virtual space, social interaction, use of AR technologies. The game “Interference” and “TimeWarp” were developed by them and the game “The Eye of Judgment” is a commercial game made by Sony PlayStation3. 
+          <br><br>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="single-defination">
+                <h5 class="mb-30">Interference</h5>
+                <p style="text-align: justify;">Interference has a group of six players that assume of the roles of telecommunication technicians. They must investigate strange breakdowns in the network. The players seek out to find these disturbances. Figure 1 illustrates a blue sphere that is a node in the network. The players can see two lines showing the directions for the other nodes. There are orange nodes that need repairs by playing a certain melody on magic flute they got from one of the non-player characters in the game. The game was developed with “Magic Lens Box”. It extends the ARToolkit. The game runs on Ultra-mobile PC (UMPC).</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="single-defination">
+                <img class="img-fluid" src="img/interference_1.png" alt="">
+                Figure 1: Interference
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="single-defination">
+                <h5 class="mb-30">TimeWarp</h5>
+                <p style="text-align: justify;">The game is based on a traditional German story about the existence of small elves who help citizens during the night until on day they disappeared. The plot of the game is that these elves are stuck in different time periods, and the goal is to find the elves by time traveling. The player needs to solve several tasks to free the elves. Figure 2 illustrates the original medieval building that was destroyed during the war superimposed to the reconstructed building. The game uses a head-mounted display and a handheld-based device for interaction. The action is executed by pressing a mouse button.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="single-defination">
+                <img class="img-fluid" src="img/timewarp.png" alt="">
+                Figure 2: TimeWarp
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="single-defination">
+                <h5 class="mb-30">The Eye of Judgment</h5>
+                <p style="text-align: justify;">It is a collectible trading card game for the PlayStation 3. The game uses augmented reality to visualize the characters and effects on the cards. The player can choose between a computer or real opponent – local or remotely. Each player has a deck of cards that during each turn, they draw new cards. The playing files is a grid of nine squares, which the first player to conquer five squares win the game. The player can summon monsters to attack the opponent or use spells. Figure 3 shows the playing mat with cards and the camera setup on the small image and on the big image it shows the augmented view on the screen.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="single-defination">
+                <img class="img-fluid" src="img/eyeJudgment.png" alt="">
+                Figure 3: The Eye of Judgment
+              </div>
+            </div>
+          </div>
+          <br><br>
+          Table 1 summarises the different range of characteristics, technologies and interaction techniques from the three games (Interference, Timewrap and The eye of Judgment) [5].
           <br><br>
           <h6 class="typo-list">Table 1. Comparison of game characteristics.</h6>
           <div class="progress-table-wrap">
@@ -274,7 +321,66 @@
             </div>
           </div>
           <br><br>
-          Wetzel et al considered the elements which impacted the player experience to develop the guidelines. Table 2 list the guidelines and a small summary.
+          <h4>Wetzel's guidelines</h4>
+          Wetzel et al considered the elements which impacted the player experience to develop the guidelines. Not all of the guidelines are needed to every augmented reality games.
+          <br><br>
+          <ol class="ordered-list list-divided" style="counter-reset: item 0; text-align: justify; margin-left: 0px">
+            <li><span><b>Experiences First, Technology Second:</b></span></li>
+            <span>While usability and technical elements are critical to success, there is a need to place as much emphasis on game design. One questionable example is the game RoboRaid in the HoloLens. Is HoloLens the best technology for the game?</span>
+            <p><img class="img-fluid" src="img/roboraid.jpg" alt=""></p>
+            Figure 4: RoboRaid 
+            <br><br>
+            <li><span><b>Stick to the theme:</b></span></li>
+            <span>Avoid selecting new technologies that are not relevant in the context of the game. The technology should fit the theme of the game. One example would be the choice of the AR Dragon game on HoloLens. By the limitation of the HoloLens 1.0, the gesture of air tap would not allow all the game interactions.</span>
+            <br><br>
+            <li><span><b>Do not stay digital:</b></span></li>
+            <span>Augmented reality games do not have to focus exclusively on digital technology. Any card games as The Eye of Judgment is an example of this guideline. Another example is the AR card game Genesis. Genesis is a skill-based real-time battle system.</span>
+            <p><img class="img-fluid" src="img/genesis_cut.png" alt=""></p>
+            Figure 5: Genesis 
+            <br><br>
+            <li><span><b>Use the Real Environment:</b></span></li>
+            <span>Large distances between different mixed reality elements can bored for the player. This can be avoided by making players full use the real space. One example can be the creation of pokestops on Pokemon GO.</span>
+            <p><img class="img-fluid" src="img/pokestops.jpg" alt=""></p>
+            Figure 6: Pokestops 
+            <br><br>
+            <li><span><b>Keep it simple:</b></span></li>
+            <span>AR games should focus on simple and clear interaction setup. Timewarp game use a range of devices (HMD, a laptop and a mouse). Lenovo Star Wars Challenge: Holochess and Combat use the lightsaber controller as input.</span>
+            <p><img class="img-fluid" src="img/starwars.combat.jpg" alt=""></p>
+            Figure 7: Lenovo Star Wars Challenge: Combat  
+            <br><br>
+            <li><span><b>Create Sharable Experiences:</b></span></li>
+            <span>Augmented reality games can interest others players and non-players in its content. Sharable experiences allow all to gain insight of the game. One current example is the Pokemon Go Raid Battle. It is a cooperative event that trainers have to work together to defeat a powerful pokemon.</span>
+            <p><img class="img-fluid" src="img/pokemonraid.jpg" alt=""></p>
+            Figure 8: Lenovo Star Wars Challenge: Combat  
+            <br><br>
+            <li><span><b>Use Various Social Elements:</b></span></li>
+            <span>Some games only have virtual characters. This introduces a risk of the experience be lonely and disconnected from surrounding environment. The use of real people allows them to have different roles. It also allows collaboration by sharing thoughts on hot to complete the game challenges. One example is the FatherIO game.</span>
+            <p><img class="img-fluid" src="img/fatherio.roles.jpg" alt=""></p>
+            Figure 9: FatherIO roles  
+            <br><br>
+            <li><span><b>Show Reality:</b></span></li>
+            <span>One of the problems of AR games is the real environment being completely removed from the users view. The real environment is obscured. This brings the biggest problem with AR: Occlusion. That is, the ability to hide virtual objects behind real elements. The company Niantic (creator of pokemon go) has published a video showing their capabilities to do occlusion.</span>
+            <div class="videoWrapper">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/7ZrmPTPgY3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <br><br>
+            <li><span><b>Turn weaknesses into strengths:</b></span></li>
+            <span>Most technologies used in AR games can have problems. GPS tracking or internet signal can be poor. The game should include this as part of the game. FatherIO game could assume the player with no mobile signal is in a hidden area, e.g. safehouse.</span>
+            <br><br>
+            <li><span><b>Do not just convert:</b></span></li>
+            <span>Convert existing games to include augmented reality does not guarantee a genuine engaging game play. Some games do not map well to augmented reality. One example is the brickscape game. The game has the option to use AR, but it does not add anything to the experience. The game can be enjoyable without AR, which it does not justify why AR is a good addition to the game.</span>
+            <div class="videoWrapper">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/44YPEqLz81s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <br><br>
+            <li><span><b>Create meaningful content:</b></span></li>
+            <span>AR adds interesting visual objects to games by adding virtual 3D content in the real world. The visual objects should be meaningful. It should allow the player to walk around and look at it from different perspective. One current game that considers this guideline is the ARise. The player solves the puzzle by changing his/her perspective and moving the character around the virtual scene.</span>
+            <br><br>
+            <li><span><b>Choose your tracking wisely:</b></span></li>
+            <span>Using new and potentially better tracking methods is important for AR applications and games. Unreliable and imprecise data can cause poor interaction. Location based and/or marker tracking should be reliable for the success of the game.</span>
+          </ol>
+          <br><br>
+          Table 2 list the guidelines and a small summary.
           <br><br>
           <h6 class="typo-list">Table 2. Overview of game design guidelines.</h6>
           <div class="progress-table-wrap">
@@ -334,17 +440,62 @@
             </div>
           </div>
           <br><br>
-          <h4>Pre-Patterns</h4>
+          Wetzel et al created a high-level design guidelines that are relevant to augmented reality games. However, the guidelines may not be applicable in all contexts. 
+          <br><br>
+          <h4>Xu's Pre-Patterns</h4>
           <p class="sample-text" style="text-align: justify;">
-            Xu et al analyze and generate design lessons from dozens of handheld AR (HAR) games. The design patterns are drawn from academic and commercial AR games, and also from their years of experience designing and teaching HAR game design. They summarize into a set of design “pre-patterns” as a means of formalizing significant design lessons derived from these existing practices into repeatable principles and solutions. Table 3 illustrates the nine design pre-patterns. They briefly summarize a few small design lessons into a list of dos and don’ts [6].
+            Xu et al analyze and generate design lessons from dozens of handheld AR (HAR) games. The design patterns are drawn from academic and commercial AR games, and also from their years of experience designing and teaching HAR game design. They summarize into a set of design “pre-patterns” as a means of formalizing significant design lessons derived from these existing practices into repeatable principles and solutions. They briefly summarize a few small design lessons into a list of dos and don’ts [6].
             <br><br>
-            <ul class="unordered-list">
-              <li>Support one-hand interaction</li>
-              <li>Consider the natural viewing angle</li>
-              <li>Make sure at least one tracking surface is in view</li>
-              <li>Do not tire players out physically</li>
-              <li>Do not encourage fast actions</li>
-            </ul>
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Do</h6>
+                <ul class="unordered-list">
+                  <li>Support one-hand interaction</li>
+                  <li>Consider the natural viewing angle</li>
+                  <li>Make sure at least one tracking surface is in view</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h6>Don'ts</h6>
+                <ul class="unordered-list">
+                  <li>Do not tire players out physically</li>
+                  <li>Do not encourage fast actions</li>
+                </ul>
+              </div>
+            </div>
+            <br><br>
+            Xu et al presents nine design pre-patterns that consider four kinds of embodied human skills. Embodied interactions rely on a person’s existing embodied skills in everyday life (naïve physics, bode awareness and skills, environment awareness and skills, social awareness and skills).
+            <br><br>
+            <ol class="ordered-list list-divided" style="counter-reset: item 0; text-align: justify; margin-left: 0px">
+              <li><span><b>Device Metaphors:</b></span></li>
+              <span>Handheld device functions as a familiar object from everyday life. HAR interface can have similarities to many kinds of lenses (cameras, magnifiers, microscope, x-ray machines).</span>
+              <br><br>
+              <li><span><b>Control Mapping:</b></span></li>
+              <span>HAR devices provides a variety of control mechanics (touch screens and accelerometers). Therefore, HAR interface supports a lot of physical actions as a game controller. A designer needs to make conscious decisions when mapping the actions to the game.</span>
+              <br><br>
+              <li><span><b>Seamful Design:</b></span></li>
+              <span>Seamful design concept is in which designers take advantage of the physical limits rather than ignoring them. HAR interfaces has technological limitations. This pre-pattern is to integrate the technological limitation through game design.</span>
+              <br><br>
+              <li><span><b>World Consistency:</b></span></li>
+              <span>A player expects that the hybrid world (mixes physical and virtual realities) will obey the principles of the real world (e.g.: laws of physics). Designers can choose between creating a realistic experience and defy user expectations.</span>
+              <br><br>
+              <li><span><b>Landmarks:</b></span></li>
+              <span>Players navigate through an augmented reality game space by using landmarks as point of reference. Adding real world landmarks helps the players to move in the mixed reality.</span>
+              <br><br>
+              <li><span><b>Personal Presence:</b></span></li>
+              <span>A player’s presence in a digital game can happened in different ways. Normally, it depends on the game genre. It can be a first-person shooter games (first person view), role-playing games (avatars controlled from the third person perspective), strategy games (player behaves like a god). Any player’s physical movements connect to the player virtual persona. It gives a stronger sense of presence.</span>
+              <br><br>
+              <li><span><b>Living Creatures:</b></span></li>
+              <span>The game experience improves if there is an illusion of game characters being responsive to physical events (sound, player’s physical movement and hand gestures). It mimics the behavior of living beings.</span>
+              <br><br>
+              <li><span><b>Body constraints:</b></span></li>
+              <span>HAR games should consider the relative position between players. It can change the options for the other player as in the game of chess. In competitive games (e.g.: tower of defense), the player strategy changes accordingly to the other players position.</span>
+              <br><br>
+              <li><span><b>Hidden information:</b></span></li>
+              <span>HAR games has the information on private displays. However, the information can be revealed by body movements or during communication. HAR interfaces can leverage player’s movement. The designer can map player’s behaviors to the game to allow other players to identify the others’ signals or to give misleading signals. It should avoid one-to-one mapping to have a better game experience.</span>
+            </ol>
+            <br><br>
+            Table 3 illustrates the nine design pre-patterns.
             <br><br>
             <h6 class="typo-list">Table 3. Summary of the nine design pre-patterns.</h6>
             <div class="progress-table-wrap">
@@ -402,7 +553,7 @@
               </div>
             </div>
             <br><br>
-            The pre-patterns leverage skills of the players, and can be used to inform the design of gameplay experiences that take advantage of embodied interaction enabled by HAR interface. They provide a solid foundation for thinking about designing fun and compelling HAR games.
+            The pre-patterns leverage skills of the players and can be used to inform the design of gameplay experiences that take advantage of embodied interaction enabled by HAR interface. They provide a solid foundation for thinking about designing fun and compelling HAR games. It helps designers avoid common pitfalls and understand how to create game experiences using handheld augmented reality.
             <br><br>
           </p>
           <h3 class="text-heading">Conclusion</h3>
@@ -411,7 +562,7 @@
             <br><br>
             The guidelines presented aim to solve some of the many challenges associated with user experience design of augmented reality applications. Dirin et al. list challenges faced by mobile augmented reality applications. One of the challenges is the physical aspect. Often, almost the whole body needs to be involved while interacting with AR application. Users need to interact and communicate with the application by clicking, tapping, moving, gesturing or giving voice commands. Other challenge is the development of the user interface. Designers have already managed to construct user interface and interaction metaphors for non-AR applications. All mobile application design metaphors are not necessarily applicable to mobile augmented reality applications; hence, new interface and interaction metaphors specific for mobile augmented reality applications are needed. Another challenge is the user experience design. Designers are required to adjust their design approaches, which are based on 2D sketching of non-AR objects using a pen and paper or mock-up tools, towards sketching of 3D scenes and objects that are viewed through a 2D perspective [1].
             <br><br>
-            When designing for interactions with device through physical media, it is important to design for intuitive user control. A common solution in creating intuitive interactions is to use metaphors. Metaphors help the user understand the digital worlds actions by relating it to the actions of the physical world, and this has been used during many years in making digital design more understandable. When designing for interactions with the device through digital media, the problem is mainly tracking and registration. The problem for geo-location based AR is accuracy and constant connectivity. These limitations are hard to design around, but they need to considered. When considering the user experience, the user can lose focus or get lost in the augmented space if an unlimited freedom is provided. Therefore a design that helps the user in finding what they are looking for or that limits the users space should be provided. When designing for physical interactions with an object that does not physically exist in the real space, consider solutions wherein the user does not need to hold, grab or otherwise perform interactions that require a lot of the hand to interact with the object. This helps avoiding the occlusion problems. Interactions such as poking, pushing or otherwise interacting in ways where the users hand only interacts with the edge of the virtual object also helps avoid this problem [4].
+            When designing for interactions with device through physical media, it is important to design for intuitive user control. A common solution in creating intuitive interactions is to use metaphors. Metaphors help the user understand the digital worlds actions by relating it to the actions of the physical world, and this has been used during many years in making digital design more understandable. When designing for interactions with the device through digital media, the problem is mainly tracking and registration. The problem for geo-location based AR is accuracy and constant connectivity. These limitations are hard to design around, but they need to be considered. When considering the user experience, the user can lose focus or get lost in the augmented space if an unlimited freedom is provided. Therefore, a design that helps the user in finding what they are looking for or that limits the users space should be provided. When designing for physical interactions with an object that does not physically exist in the real space, consider solutions wherein the user does not need to hold, grab or otherwise perform interactions that require a lot of the hand to interact with the object. This helps avoiding the occlusion problems. Interactions such as poking, pushing or otherwise interacting in ways where the users’ hand only interacts with the edge of the virtual object also helps avoid this problem [4].
             <br><br>
             There is no one golden rule to follow when designing an AR system, but it is very important to consider the context in which the user is using the system, and the purpose the user is hoping to achieve, and act accordingly to choose the guidelines and design solutions that fit best into that scenario. The presented guidelines might serve as a good starting point for anyone attempting to design AR game.
             <!-- <div class="row">
